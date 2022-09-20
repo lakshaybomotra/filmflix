@@ -1,7 +1,8 @@
 module.exports = {
+  parser: 'babel-eslint',
   env: {
     browser: true,
-    es2021: true,
+    es6: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -10,8 +11,16 @@ module.exports = {
   overrides: [
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: 2021,
     sourceType: 'module',
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
   plugins: [
     'react',
@@ -35,6 +44,8 @@ module.exports = {
     'no-param-reassign' : 0,
     'react/react-in-jsx-scope' : 0,
     'react/jsx-props-no-spreading' : 0,
-    'no-sparse-arrays' : 0
+    'no-sparse-arrays' : 0,
+    'no-array-index-key' : 0,
+    Camelcase: 0,
   },
 };
